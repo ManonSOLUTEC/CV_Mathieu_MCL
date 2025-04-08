@@ -1,3 +1,6 @@
+html {
+  scroll-padding-top: 170px; /* Décale le contenu pour que l'ancrage soit visible sous la navbar */
+}
 
 body {
     margin: 0;
@@ -5,6 +8,7 @@ body {
     background: #f7f9fc;
     color: #333;
 }
+
 .sticky-header {
   position: sticky;
   top: 0;
@@ -104,7 +108,6 @@ body {
   display: block !important;
 }
 
-
 .container {
     max-width: 800px;
     margin: 40px auto;
@@ -155,6 +158,27 @@ a:hover {
     text-decoration: underline;
 }
 
+.technos{
+  background-color: #f7c0cc;
+  padding: 0 5px 5px 5px;
+  border-radius: 5px;
+}
+
+.contexte{
+  background-color: #ddd;
+  padding: 0 5px 5px 5px;
+  border-radius: 5px;
+}
+
+.activite{
+  color: #ed1b4b
+}
+
+.duree{
+  color:#9f9f9f;
+  font-size: 0.8em;
+  margin-top: -20px;
+}
 .footer {
   position: sticky;
   bottom: 0;
