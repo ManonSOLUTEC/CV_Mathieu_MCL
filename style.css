@@ -1,0 +1,239 @@
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: #f7f9fc;
+    color: #333;
+}
+.sticky-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  height: 80px; /* hauteur fixée ou estimée */
+  border-bottom: 0px solid #ddd;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.logo {
+  max-width: 150px;
+  width: 20vw;
+  height: auto;
+}
+
+/* navbar sticky juste après le header */
+.navbar {
+  position: sticky;
+  top: 100px; /* même que la hauteur du header */
+  width: 100%;
+  background-color: #ed1b4b;
+  color: #767b7f;
+  padding: 5px 0;
+  z-index: 999;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.navbar ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.navbar ul li {
+  position: relative;
+}
+
+.navbar ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.2em;
+  padding: 10px 15px;
+  display: block;
+}
+
+.navbar ul li a:hover {
+  color : #f7c0cc;
+  background-color: #767b7f;
+  border-radius: 4px;
+}
+
+/* Sous-menu */
+.submenu {
+  display: none !important;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #767b7f;
+  min-width: 180px;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  z-index: 1000;
+  overflow-y: auto;    /* Activer la barre de défilement vertical si nécessaire */
+  max-height: calc(100vh - 110px - 50px); /* Hauteur maximale de l'écran moins la navbar et le footer */
+  border: 2px solid #ed1b4b;
+  border-top: 0px;
+}
+
+.submenu li {
+  width: 100%;
+}
+
+.submenu li a {
+  padding: 10px 15px;
+  display: block;
+  font-size: 1em !important;
+  color: white;
+}
+
+.submenu li a:hover {
+  background-color: #767b7f;
+}
+
+/* Afficher le sous-menu au survol du <li> parent */
+.navbar li:hover > .submenu {
+  display: block !important;
+}
+
+
+.container {
+    max-width: 800px;
+    margin: 40px auto;
+    background: #fff;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.05);
+}
+h1, h2 {
+    margin: 0;
+}
+h1 {
+    font-size: 2.4em;
+    color: #1a1a1a;
+}
+h2 {
+    margin-top: 30px;
+    color: #ed1b4b;
+    font-size: 1.4em;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 5px;
+}
+.info {
+    margin-bottom: 20px;
+}
+.info p {
+    margin: 5px 0;
+    color: #666;
+}
+.section {
+    margin-top: 20px;
+}
+ul {
+    padding-left: 20px;
+}
+code {
+    background: #f0f0f0;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: monospace;
+    font-size: 0.9em;
+}
+a {
+    color: #0066cc;
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+
+.footer {
+  position: sticky;
+  bottom: 0;
+  width: 100%;
+  height: 50px;
+  background-color: #767b7f; /* Couleur de fond */
+  color: white; /* Couleur du texte */
+  text-align: center; /* Centrer le texte */
+  padding: 0.1px 0; /* Padding autour du texte */
+  font-size: 1em; /* Taille du texte */
+  z-index: 1; /* Assurez-vous qu'il reste au-dessus du reste du contenu */
+}
+
+/* Conteneur du feu d'artifice */
+#firework-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  width: 100vw;
+  height: 100vh;
+  z-index: 9999;
+}
+
+/* Effet d'explosion du feu d'artifice */
+.firework {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  position: absolute;
+  animation: explode 2s ease-out forwards;
+}
+
+@keyframes explode {
+  0% {
+    opacity: 1;
+    transform: translate(var(--x), -10vh) rotate(0deg); /* Position aléatoire en haut de l'écran */
+  }
+  100% {
+    opacity: 0;
+    transform: translate(var(--y), 100vh) rotate(360deg); /* La feuille tombe et effectue une rotation */
+  }
+}
+
+/* Style de la boîte de dialogue */
+.dialog-box {
+  display: none; /* Cacher la boîte de dialogue au départ */
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+}
+
+/* Contenu de la boîte de dialogue */
+.dialog-content {
+  text-align: center;
+}
+
+.dialog-content p {
+  font-size: 1.5em;
+  margin-bottom: 20px;
+}
+
+.dialog-content button {
+  padding: 10px 20px;
+  font-size: 1.1em;
+  margin: 5px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #ed1b4b;
+  color: white;
+}
+
+.dialog-content button:hover {
+  background-color: #c50935;
+}
