@@ -85,3 +85,6 @@ function adjustSubmenuHeight() {
   // Ajuster la hauteur du sous-menu chaque fois que la fenêtre est redimensionnée
   window.addEventListener("resize", adjustSubmenuHeight);
   
+  document.getElementById("logo").addEventListener("click", function() {
+    alert("Et si vous écriviez quelque chose ?");
+  });
