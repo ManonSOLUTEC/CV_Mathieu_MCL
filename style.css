@@ -262,3 +262,39 @@ a:hover {
 .dialog-content button:hover {
   background-color: #c50935;
 }
+
+@media (max-width: 600px) {
+  .sticky-header {
+    flex-direction: column;
+    height: auto;
+    padding: 10px;
+  }
+
+  .logo {
+    width: 100px;
+  }
+
+  .navbar {
+    top: 170px; 
+  }
+
+  .navbar ul {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .navbar ul li a {
+    font-size: 1em;
+    padding: 8px 12px;
+  }
+
+  .container {
+    margin: 20px 10px;
+    padding: 20px;
+  }
+
+  .footer {
+    font-size: 0.9em;
+    padding: 10px 0;
+  }
+}
